@@ -1,0 +1,24 @@
+erDiagram
+    User ||--o{ Habit : owns
+    Habit ||--o{ HabitLog : generates
+    User {
+        int id
+        string name
+        string email
+        int streak
+        int streak_threshold
+    }
+    Habit {
+        foreign user
+        str name
+        str beschreibung
+        bool is_active
+        int interval
+        date created_at
+        date updated_at
+    }
+    HabitLog {
+        foreign habit
+        date date
+        bool was_completed
+    }
